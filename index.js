@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(cors({
     origin: (origin, callback) => {
-    if (!origin || /^(http:\/\/localhost:\d+|http:\/\/127\.0\.0\.1:\d+)$/.test(origin)) {
+    if (!origin || /^(http:\/\/localhost:\d+|http:\/\/127\.0\.0\.1:\d+)$/.test(origin) || origin === 'https://rince-kanban-d1u1.vercel.app') {
     callback(null, true);
     } else {
     callback(new Error("Not allowed by CORS"));
